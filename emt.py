@@ -37,7 +37,7 @@ try:
     data = requests.get("https://weather.terrapin.com/wx/storm_show.jsp?area=ATL&storm=06A&dtype=ASCII", verify=False)
     _,_,lat,lon,_,_ = [x for x in data.text.splitlines() if '<' not in x and '>' not in x and len(x) > 5][-1].split(', ')
     epicenter = {"lat": float(lat), "lng": float(lon)}
-    print "Got em coordinates!"
+    print ("Got em coordinates!")
 except:
     pass
 
